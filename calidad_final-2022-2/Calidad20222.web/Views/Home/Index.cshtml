@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Poker Game</h1>
+    <form action="/home/generar" method="post">
+        <label>Carta 1</label>
+        <select required name="carta1Palo">
+            <option value="CORAZON">CORAZON</option>
+            <option value="TREBOL">TREBOL</option>
+            <option value="ESPADA">ESPADA</option>
+            <option value="COCO">COCO</option>
+        </select>
+        <input required type="number" min="1" max="13" name="carta1" />
+         <label>Carta 2</label>
+         <select required name="carta2Palo">
+            <option value="CORAZON">CORAZON</option>
+            <option value="TREBOL">TREBOL</option>
+            <option value="ESPADA">ESPADA</option>
+            <option value="COCO">COCO</option>
+        </select>
+        <input required type="number" min="1" max="13"name="carta2" />
+         <label>Carta 3</label>
+         <select required name="carta3Palo">
+            <option value="CORAZON">CORAZON</option>
+            <option value="TREBOL">TREBOL</option>
+            <option value="ESPADA">ESPADA</option>
+            <option value="COCO">COCO</option>
+        </select>
+        <input required type="number" min="1" max="13" name="carta3" />
+         <label>Carta 4</label>
+         <select required name="carta4Palo">
+            <option value="CORAZON">CORAZON</option>
+            <option value="TREBOL">TREBOL</option>
+            <option value="ESPADA">ESPADA</option>
+            <option value="COCO">COCO</option>
+        </select>
+        <input required type="number" min="1" max="13" name="carta4" />
+         <label>Carta 5</label>
+         <select required name="carta5Palo">
+            <option value="CORAZON">CORAZON</option>
+            <option value="TREBOL">TREBOL</option>
+            <option value="ESPADA">ESPADA</option>
+            <option value="COCO">COCO</option>
+        </select>
+        <input required type="number" min="1" max="13" name="carta5" />
+        <button class="btn btn-primary">Generar Jugada</button>
+    </form>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Cartas</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Numero @item.Palo</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+    <h1 id="respuesta">Jugada: @ViewBag.Jugada</h1>
+</div>
