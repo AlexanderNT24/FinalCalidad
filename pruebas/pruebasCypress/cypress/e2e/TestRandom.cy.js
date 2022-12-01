@@ -1,11 +1,7 @@
 describe('Prueba', () => {
     it('Prueba general', () => {
         let arrayPalos=['CORAZON','TREBOL','ESPADA','COCO']
-
-
         cy.visit(Cypress.env('base_url'))
-        
-
         for (let index = 1; index < 4; index++) {
             cy.visit(Cypress.env('base_url'))
 
